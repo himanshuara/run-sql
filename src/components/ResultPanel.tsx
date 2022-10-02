@@ -15,6 +15,7 @@ export const ResultPanel:React.FC<ResultPanelProps> = ({tableData})=>{
     const rows:Array<any> = tableData.slice(1)
     useEffect(()=>{
         setTotalRows(rows as Array<any>)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[rows.length])
     useEffect(()=>{
         if(totalRows.length){
@@ -22,21 +23,21 @@ export const ResultPanel:React.FC<ResultPanelProps> = ({tableData})=>{
             setRowsToDisplay(rowsToDisplay.concat(freshRowsToDisplay))
             setStartIndex(startIndex+PAGE_SIZE)
         }
-        
+     // eslint-disable-next-line react-hooks/exhaustive-deps   
     },[totalRows])
 
     const loadMore = useCallback(()=>{
         const freshRowsToDisplay = totalRows.slice(startIndex,startIndex+PAGE_SIZE)
         setRowsToDisplay(rowsToDisplay.concat(freshRowsToDisplay))
         setStartIndex(startIndex+PAGE_SIZE)
-    },[startIndex,PAGE_SIZE])
+    },[startIndex,rowsToDisplay,totalRows])
     
     useLayoutEffect(()=>{
         setTimeout(()=>{
             const el = tableRowWrapperRef?.current as HTMLElement
             el.scrollTop = el.scrollHeight
         },100)
-        
+     // eslint-disable-next-line react-hooks/exhaustive-deps   
     },[startIndex])
     return(
         <div className="wrapper">
