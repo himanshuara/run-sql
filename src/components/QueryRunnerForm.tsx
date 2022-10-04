@@ -1,8 +1,8 @@
-import { useCallback, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useRef, useState } from "react";
 import { xhr } from "../http/HttpService";
-import { ResultPanel } from "./ResultPanel";
 import "./QueryRunnerForm.scss";
 import { CSV } from "../utils/CSVParser";
+
 /**
  * Function to check if query is valid
  * Only select queries will be valid (any other query will be marked erronous)
@@ -16,6 +16,11 @@ const validateQuery = (queryList: Array<string>) => {
   });
   return invalidQueries.length === 0;
 };
+
+const ResultPanel = lazy(
+    () =>
+      import( "./ResultPanel")
+  )
 export const QueryRunnerForm: React.FC<{}> = () => {
   const inputRef = useRef(null);
   const [data, setData] = useState([]);
@@ -71,7 +76,16 @@ export const QueryRunnerForm: React.FC<{}> = () => {
         </div>
       </form>
       <>
-        <ResultPanel tableData={data} />
+      <Suspense
+        fallback={
+          <>
+          Loading...
+          </>
+        }
+      >
+       <ResultPanel tableData={data} />
+      </Suspense>
+        
       </>
     </>
   );

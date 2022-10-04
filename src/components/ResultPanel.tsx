@@ -11,7 +11,7 @@ interface ResultPanelProps {
   tableData: Array<any>;
 }
 const PAGE_SIZE = 10;
-export const ResultPanel: React.FC<ResultPanelProps> = ({ tableData }) => {
+const ResultPanel: React.FC<ResultPanelProps> = ({ tableData }) => {
   const headers = tableData.length ? [...tableData[0]] : [];
   const tableRowWrapperRef = createRef() as React.RefObject<HTMLDivElement>;
   const [rowsToDisplay, setRowsToDisplay] = useState([] as Array<any>);
@@ -111,3 +111,5 @@ export const ResultPanel: React.FC<ResultPanelProps> = ({ tableData }) => {
     </div>
   );
 };
+
+export default ResultPanel
