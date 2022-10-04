@@ -24,3 +24,10 @@ You will also see any lint errors in the console.
 ## Demo Application
 
 * https://unrivaled-lokum-ffd110.netlify.app/
+
+## Page Analytics
+* The application load time is ~450ms (DomContentLoaded and Load)
+
+## Optimizations Done
+* The Result Panel component is lazy loaded (although not beneficial in this scenario)
+* Result data is displayed in chunks of 10 rows to avoid browser crash
