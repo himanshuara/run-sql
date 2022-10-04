@@ -1,10 +1,9 @@
+import { QueryRunnerForm } from "../components/QueryRunnerForm";
 
-import { QueryRunnerForm } from "../components/QueryRunnerForm"
-
-export const QueryRunner:React.FC<{}> = ()=>{
-    return(
-        <>
-        <QueryRunnerForm />
-        </>
-    )
-}
+export const QueryRunner: React.FC<{}> = () => {
+  return (
+    <>
+      <QueryRunnerForm />
+    </>
+  );
+};

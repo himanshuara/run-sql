@@ -1,6 +1,5 @@
-
-import './App.css';
-import { QueryRunner } from './modules/QueryRunner';
+import "./App.css";
+import { QueryRunner } from "./modules/QueryRunner";
 
 function App() {
   return (
