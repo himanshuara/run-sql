@@ -1,6 +1,6 @@
 /**
- * 
- * @param native window.fetch arguments 
+ *
+ * @param native window.fetch arguments
  * @returns xhr Promise
  * This xhr layer could be made more generic
  */

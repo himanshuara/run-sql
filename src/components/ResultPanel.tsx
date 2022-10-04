@@ -50,7 +50,7 @@ const ResultPanel: React.FC<ResultPanelProps> = ({ tableData }) => {
   useLayoutEffect(() => {
     /*
     Scroll to the end of the div to show latest data
-    */ 
+    */
     setTimeout(() => {
       const el = tableRowWrapperRef?.current as HTMLElement;
       if (el) {
@@ -112,4 +112,4 @@ const ResultPanel: React.FC<ResultPanelProps> = ({ tableData }) => {
   );
 };
 
-export default ResultPanel
+export default ResultPanel;

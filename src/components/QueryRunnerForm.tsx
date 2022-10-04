@@ -17,10 +17,7 @@ const validateQuery = (queryList: Array<string>) => {
   return invalidQueries.length === 0;
 };
 
-const ResultPanel = lazy(
-    () =>
-      import( "./ResultPanel")
-  )
+const ResultPanel = lazy(() => import("./ResultPanel"));
 export const QueryRunnerForm: React.FC<{}> = () => {
   const inputRef = useRef(null);
   const [data, setData] = useState([]);
@@ -35,7 +32,7 @@ export const QueryRunnerForm: React.FC<{}> = () => {
           "Content-Type": "text/csv",
         },
         body: {
-          query: values, 
+          query: values,
           /* When using real world application
           sql queries should be encrypted */
         },
@@ -76,16 +73,9 @@ export const QueryRunnerForm: React.FC<{}> = () => {
         </div>
       </form>
       <>
-      <Suspense
-        fallback={
-          <>
-          Loading...
-          </>
-        }
-      >
-       <ResultPanel tableData={data} />
-      </Suspense>
-        
+        <Suspense fallback={<>Loading...</>}>
+          <ResultPanel tableData={data} />
+        </Suspense>
       </>
     </>
   );
