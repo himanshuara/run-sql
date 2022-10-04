@@ -15,12 +15,12 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ## Noteworthy points
--- This is a serverless dummy app
--- Only select queries are allowed to run (UI should not allow update, delete, drop statements to run as they could lead to security concerns)
--- The available table names are 'categories','customers', 'employee_territories','employees','order_details', 'orders','products','regions','shippers','suppliers' and 'territories'
--- Queries will always display all the columns irrespective of columns selected in the select query
--- Although multiple queries separated by semicolon(;) are allowed, the data will be displayed from the first query only
+* This is a serverless dummy app
+* Only select queries are allowed to run (UI should not allow update, delete, drop statements to run as they could lead to security concerns)
+* The available table names are 'categories','customers', 'employee_territories','employees','order_details', 'orders','products','regions','shippers','suppliers' and 'territories'
+* Queries will always display all the columns irrespective of columns selected in the select query
+* Although multiple queries separated by semicolon(;) are allowed, the data will be displayed from the first query only
 
 ## Demo Application
 
--- https://unrivaled-lokum-ffd110.netlify.app/
+* https://unrivaled-lokum-ffd110.netlify.app/
